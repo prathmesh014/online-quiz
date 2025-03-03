@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #136eff;
+      padding: 0.5rem 1rem;
+      color: white;
+      height:10svh
+    }
+
+    .navbar .logo {
+      font-size: 2.0rem;
+      font-weight: bold;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li {
+      margin: 0 0.5rem;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      transition: color 0.3s;
+      font-size: 1.1rem;
+      font-weight:italic;
+    }
+
+    .navbar ul li a:hover {
+      color: #ddd;
+    }
+
+
+      .navbar ul.active {
+        display: flex;
+      }
+
+      
+        .form-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #f1f5f9;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(125, 122, 122, 0.656);
+            text-align: center;
+        }
+        .form-container h1 {
+            color: rgb(0, 0, 0);
+            font-size: 1.0rem;
+            margin-bottom: 20px;
+        }
+        
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: initial;
+  color: #fff; /* Text color */
+  background-color: #007bff; /* Primary color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underline for links */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.btn-primary:active {
+  background-color: #003f7f; /* Even darker shade when clicked */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow on click */
+}
+
+.btn-primary:disabled {
+  background-color: #b3d7ff; /* Lightened color for disabled state */
+  cursor: not-allowed; /* Not-allowed cursor for disabled state */
+  opacity: 0.6; /* Reduced opacity for disabled state */
+}
+
+       
+        .form-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ffffff;
+            border-radius: 10px;
+            background-color: #fffefe;
+            box-shadow: 0 0 10px rgb(125, 125, 125);
+            text-align: center;
+            
+
+        }
+        
+          .message {
+            color: rgb(255, 12, 12);
+            font-size: large;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+    
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Admin Dashboard</div>
+    <h6 class="mb-0">{{ message }}</h6>
+    <ul>
+      <li><a href="/viewresults">View results</a></li>
+      <li><a href="/questions">Manage questions</a></li>
+      <li><a href="">logout</a></li>
+    </ul>
+    
+  </nav>
+  
+  <div class="form-container">
+    <h1>add and delete questions</h1>
+    <a class="btn btn-primary" href="/display" role="button">Manage questions</a>
+    
+        
+</div>
+<div class="form-container">
+    <h1>view results</h1>
+    
+    <a class="btn btn-primary" href="/viewresults" role="button">View results</a>
+            
+</div>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.navbar ul');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
